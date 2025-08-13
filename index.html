@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block de Notas - McComics IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>📝 Block de Notas IA</h1>
+            <div class="toolbar">
+                <button id="new-file" class="btn btn-primary">📄 Nuevo</button>
+                <button id="open-file" class="btn btn-secondary">📂 Abrir</button>
+                <button id="save-file" class="btn btn-secondary">💾 Guardar</button>
+                <button id="ai-assist" class="btn btn-ai">🤖 IA Asistente</button>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span id="file-name">Sin título</span>
+                    <div class="editor-controls">
+                        <button id="word-count" class="btn-text">0 palabras</button>
+                        <select id="font-size">
+                            <option value="12">12px</option>
+                            <option value="14" selected>14px</option>
+                            <option value="16">16px</option>
+                            <option value="18">18px</option>
+                            <option value="20">20px</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <textarea 
+                    id="text-editor" 
+                    placeholder="Comienza a escribir tu texto aquí...
+                    
+Características disponibles:
+• Ctrl+N - Nuevo archivo
+• Ctrl+O - Abrir archivo
+• Ctrl+S - Guardar archivo
+• Ctrl+Z - Deshacer
+• Ctrl+Y - Rehacer
+• F11 - Pantalla completa"></textarea>
+            </div>
+            
+            <div class="ai-panel" id="ai-panel">
+                <div class="ai-header">
+                    <h3>🤖 Asistente IA</h3>
+                    <button id="close-ai" class="btn-close">✕</button>
+                </div>
+                <div class="ai-content">
+                    <div class="ai-suggestions">
+                        <h4>Sugerencias rápidas:</h4>
+                        <button class="suggestion-btn" data-action="corregir">✏️ Corregir texto</button>
+                        <button class="suggestion-btn" data-action="resumir">📋 Resumir</button>
+                        <button class="suggestion-btn" data-action="expandir">📈 Expandir ideas</button>
+                        <button class="suggestion-btn" data-action="traducir">🌐 Traducir</button>
+                    </div>
+                    <div class="ai-chat">
+                        <div id="ai-messages" class="ai-messages"></div>
+                        <div class="ai-input">
+                            <input type="text" id="ai-prompt" placeholder="Pregunta algo sobre tu texto...">
+                            <button id="send-ai" class="btn btn-ai">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="status-bar">
+                <span id="status">Listo</span>
+                <span id="cursor-position">Línea 1, Columna 1</span>
+                <span id="app-info">McComics IA v1.0</span>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>
